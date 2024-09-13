@@ -5,174 +5,190 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Tienda De Muebles</title>
+            <link rel="stylesheet" href="CSS/normalize.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="CSS/styles.css">
         </head>
         <body>
             <header>
                 
-                <h1>Tienda <span> Muebles </span></h1>
+                <h1 class = "nombre-sitio">Tienda <span> Muebles </span></h1>
 
             </header>
         
-            <nav>
+            <div class = "contenedor-navegacio"> 
+                <nav class = "nav-principal contenedor">
             
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="tienda.html">Tienda</a>
-                <a href="blog.html">Blog</a>
-                <a href="galeria.html">Galería</a>
-                <a href="contacto.html">Contacto</a>
+                    <a class = "enlace" href="index.html">Inicio</a>
+                    <a class = "enlace" href="nosotros.html">Nosotros</a>
+                    <a class = "enlace" href="tienda.html">Tienda</a>
+                    <a class = "enlace" href="blog.html">Blog</a>
+                    <a class = "enlace" href="galeria.html">Galería</a>
+                    <a class = "enlace" href="contacto.html">Contacto</a>
+    
+                </nav>
+            </div>
 
-            </nav>
+            <div class = "hero"></div>
            
-            <section>
+            <section class = "contenedor categorias">
 
-                <h2>Categorías de <span> Productos.</span></h2>
+                <h2 class = "text-center">Categorías de Productos.</h2>
 
-                <div>
+                <div class = "listado-categorias">
+
+                    <div class = "categorias">
                     
                     <img src="img/categoria1.jpg" alt="Imagen Categoría.">
                     <a href="">Oficina</a>
 
-                </div>
+                    </div>
 
-                <div>
-                    
-                    <img src="img/categoria2.jpg" alt="Imagen Categoría.">
-                    <a href="">Hogar</a>
-                    
-                </div>
+                    <div class = "categorias">
+                        
+                        <img src="img/categoria2.jpg" alt="Imagen Categoría.">
+                        <a href="">Hogar</a>
+                        
+                    </div>
 
-                <div>
-                    
-                    <img src="img/categoria3.jpg" alt="Imagen Categoría.">
-                    <a href="">Cocina</a>
+                    <div class = "categorias">
+                        
+                        <img src="img/categoria3.jpg" alt="Imagen Categoría.">
+                        <a href="">Cocina</a>
+                        
+                    </div>
                     
                 </div>
+                
 
             </section>
 
-            <section>
+            <section class = "sobre-nosotros">
             
-                <div>
+                <div class = "contenedor sobre-nosotros-grid">
+                    <div class = "texto-nosotros">
 
-                    <h2>Sobre Nosotros</h2>
+                        <h2>Sobre Nosotros</h2>
 
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum cumque illum vitae nulla, nihil ad voluptatibus fuga magnam nisi aliquam unde sunt quibusdam quisquam excepturi id, explicabo fugiat, perferendis molestiae!</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum cumque illum vitae nulla, nihil ad voluptatibus fuga magnam nisi aliquam unde sunt quibusdam quisquam excepturi id, explicabo fugiat, perferendis molestiae!</p>
+
+                    </div>
 
                 </div>
             
             </section>
 
-            <main>
+            <main class = "contenido-principal contenedor">
 
-                <h2>¡Nuestros productos, donde encuentra los mejores muebles para tu hogar!</h2>
+                <h2 class = "text-center">Nuestros productos</h2>
 
-                <div>
+                <div class = "listado-productos">
 
-                    <div>
+                    <div class = "productos">
                     
                         <img src="img/producto1.jpg" alt="Imagen Producto">
 
-                        <div>
+                        <div class = "texto-producto">
 
                             <h3>Producto 1</h3>
 
                             <p>Maecenas leo nulla, sagittis ut sapien a, sagittis rhoncus dui. Maecenas id placerat mauris. Suspendisse posuere varius tellus in ullamcorper. </p>
 
-                            <p>$1,000,000</p>
+                            <p class = "precio">$1,000,000</p>
 
-                            <a href="#" >Agregar al carrito</a>
+                            <a class = "btn" href="#" >Agregar al carrito</a>
 
                         </div> <!-- Info Producto -->
                     
                     </div> <!-- Producto -->
 
-                    <div>
+                    <div class = "productos">
                     
                         <img src="img/producto2.jpg" alt="Imagen Producto">
 
-                        <div>
+                        <div class = "texto-producto">
 
                             <h3>Producto 2</h3>
 
                             <p>Maecenas leo nulla, sagittis ut sapien a, sagittis rhoncus dui. Maecenas id placerat mauris. Suspendisse posuere varius tellus in ullamcorper. </p>
 
-                            <p>$1,000,000</p>
+                            <p class = "precio">$1,000,000</p>
 
-                            <a href="#" >Agregar al carrito</a>
+                            <a class = "btn" href="#" >Agregar al carrito</a>
 
                         </div> <!-- Info Producto -->
                     
                     </div> <!-- Producto -->
 
-                    <div>
+                    <div class = "productos">
                     
                         <img src="img/producto3.jpg" alt="Imagen Producto">
 
-                        <div>
+                        <div class = "texto-producto">
 
                             <h3>Producto 3</h3>
 
                             <p>Maecenas leo nulla, sagittis ut sapien a, sagittis rhoncus dui. Maecenas id placerat mauris. Suspendisse posuere varius tellus in ullamcorper. </p>
 
-                            <p>$1,000,000</p>
+                            <p class = "precio">$1,000,000</p>
 
-                            <a href="#" >Agregar al carrito</a>
+                            <a class = "btn" href="#" >Agregar al carrito</a>
 
                         </div> <!-- Info Producto -->
                     
                     </div> <!-- Producto -->
 
-                    <div>
+                    <div class = "productos">
                     
                         <img src="img/producto4.jpg" alt="Imagen Producto">
 
-                        <div>
+                        <div class = "texto-producto">
 
                             <h3>Producto 4</h3>
 
                             <p>Maecenas leo nulla, sagittis ut sapien a, sagittis rhoncus dui. Maecenas id placerat mauris. Suspendisse posuere varius tellus in ullamcorper. </p>
 
-                            <p>$1,000,000</p>
+                            <p class = "precio">$1,000,000</p>
 
-                            <a href="#" >Agregar al carrito</a>
+                            <a class = "btn" href="#" >Agregar al carrito</a>
 
                         </div> <!-- Info Producto -->
                     
                     </div> <!-- Producto -->
 
-                    <div>
+                    <div class = "productos">
                     
                         <img src="img/producto5.jpg" alt="Imagen Producto">
 
-                        <div>
+                        <div class = "texto-producto">
 
                             <h3>Producto 5</h3>
 
                             <p>Maecenas leo nulla, sagittis ut sapien a, sagittis rhoncus dui. Maecenas id placerat mauris. Suspendisse posuere varius tellus in ullamcorper. </p>
 
-                            <p>$1,000,000</p>
+                            <p class = "precio">$1,000,000</p>
 
-                            <a href="#" >Agregar al carrito</a>
+                            <a class = "btn" href="#" >Agregar al carrito</a>
 
                         </div> <!-- Info Producto -->
                     
                     </div> <!-- Producto -->
 
-                    <div>
+                    <div class = "productos">
                     
                         <img src="img/producto6.jpg" alt="Imagen Producto">
 
-                        <div>
+                        <div class = "texto-producto">
 
                             <h3>Producto 6</h3>
 
                             <p>Maecenas leo nulla, sagittis ut sapien a, sagittis rhoncus dui. Maecenas id placerat mauris. Suspendisse posuere varius tellus in ullamcorper. </p>
 
-                            <p>$1,000,000</p>
+                            <p class = "precio">$1,000,000</p>
 
-                            <a href="#" >Agregar al carrito</a>
+                            <a class = "btn" href="#" >Agregar al carrito</a>
 
                         </div> <!-- Info Producto -->
                     
