@@ -1,0 +1,417 @@
+:root {
+    --azul-pastel: #A8D8EA;
+    --rosa-pastel: #FFCAD4;
+    --verde-pastel: #C5E1A5;
+    --amarillo-pastel: #FFF9C4;
+    --blanco: #FFFFFF;
+    --gris-claro: #F5F5F5;
+    --texto-oscuro: #333333;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--texto-oscuro);
+    background-color: var(--blanco);
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header y Navegación */
+.main-header {
+    background-color: var(--azul-pastel);
+    padding: 1rem 0;
+    /* Usamos Flexbox para alinear el logo y la navegación */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 5rem;
+}
+
+.main-nav {
+    /* Flexbox para la navegación */
+    display: flex;
+}
+
+.nav-list {
+    /* Eliminamos los puntos de la lista y aplicamos Flexbox */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem; /* Espacio entre elementos de navegación */
+}
+
+.nav-list a {
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--rosa-pastel);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--rosa-pastel);
+    padding: 5rem 0;
+    /* Centramos el contenido vertical y horizontalmente con Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--verde-pastel);
+    color: var(--texto-oscuro);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--amarillo-pastel);
+}
+
+/* Sección de Productos */
+.productos-section {
+    padding: 5rem 0;
+    background-color: var(--gris-claro);
+}
+
+.productos-container {
+    /* Usamos Flexbox para crear una cuadrícula flexible de productos */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.producto-card {
+    background-color: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Flexbox para organizar el contenido de la tarjeta verticalmente */
+    display: flex;
+    flex-direction: column;
+    /* flex-basis determina el ancho base de cada tarjeta */
+    flex-basis: calc(25% - 2rem);
+    /* flex-grow permite que las tarjetas crezcan si hay espacio disponible */
+    flex-grow: 1;
+    /* Asegura que todas las tarjetas tengan la misma altura mínima */
+    min-height: 350px;
+}
+
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    margin: 1rem;
+}
+
+.producto-card p {
+    margin: 0 1rem;
+    /* flex-grow: 1 hace que el párrafo ocupe todo el espacio disponible,
+       empujando el botón hacia abajo */
+    flex-grow: 1;
+}
+
+.producto-card button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--azul-pastel);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.producto-card button:hover {
+    background-color: var(--verde-pastel);
+}
+
+/* Galería de Imágenes */
+.galeria-section {
+    padding: 5rem 0;
+}
+
+.galeria-container {
+    /* Usamos Flexbox para crear una galería de imágenes flexible */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.galeria-container img {
+    /* flex-basis: calc(33.333% - 1rem) crea una cuadrícula de 3 columnas */
+    flex-basis: calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Transición suave al hacer hover */
+    transition: transform 0.3s ease;
+}
+
+.galeria-container img:hover {
+    /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* Sección de Comentarios */
+.comentarios-section {
+    padding: 5rem 0;
+    background-color: var(--amarillo-pastel);
+}
+
+.comentarios-container {
+    /* Flexbox para organizar los comentarios en una columna */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.comentario {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Flexbox para alinear la imagen del usuario y el contenido del comentario */
+    display: flex;
+    align-items: center;
+}
+
+.comentario img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.comentario-contenido {
+    /* Flexbox para organizar el nombre y el texto del comentario */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 5rem 0;
+    background-color: var(--verde-pastel);
+    /* Centramos el contenido con Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form {
+    /* Flexbox para organizar el input y el botón horizontalmente */
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    padding: 1rem 2rem;
+    background-color: var(--rosa-pastel);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--azul-pastel);
+}
+
+/* Características Section */
+.caracteristicas-section {
+    padding: 5rem 0;
+}
+
+.caracteristicas-container {
+    /* Flexbox para organizar las características en una fila */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.caracteristica {
+    /* Flexbox para organizar el contenido de cada característica verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* flex-basis define el ancho base de cada característica */
+    flex-basis: calc(33.333% - 2rem);
+}
+
+.caracteristica i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--gris-claro);
+    padding: 2rem;
+    /* Flexbox para organizar los widgets verticalmente */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.widget h3 {
+    margin-top: 0;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    margin-bottom: 0.5rem;
+}
+
+.widget a {
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.widget a:hover {
+    color: var(--azul-pastel);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--azul-pastel);
+    color: var(--texto-oscuro);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    /* Flexbox para organizar las secciones del footer */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-section {
+    /* flex-basis define el ancho base de cada sección del footer */
+    flex-basis: calc(33.333% - 2rem);
+}
+
+.footer-section h3 {
+    margin-top: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--rosa-pastel);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--blanco);
+    padding-top: 2rem;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .main-header {
+        /* Cambiamos a columna en dispositivos móviles */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        margin-top: 1rem;
+    }
+
+    .producto-card {
+        /* En móviles, las tarjetas ocupan todo el ancho */
+        flex-basis: 100%;
+    }
+
+    .galeria-container img {
+        /* En móviles, las imágenes ocupan la mitad del ancho */
+        flex-basis: calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+
+    .caracteristica {
+        /* En móviles, las características ocupan todo el ancho */
+        flex-basis: 100%;
+    }
+
+    .footer-section {
+        /* En móviles, las secciones del footer ocupan todo el ancho */
+        flex-basis: 100%;
+    }
+}
