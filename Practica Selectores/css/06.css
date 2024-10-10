@@ -1,0 +1,7 @@
+.texto {
+    background-color: yellow;
+}
+
+div.texto {
+    background-color: red;
+}
