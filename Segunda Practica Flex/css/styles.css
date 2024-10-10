@@ -1,10 +1,10 @@
 :root {
-    --azul-pastel: #A8D8EA;
-    --rosa-pastel: #FFCAD4;
-    --verde-pastel: #C5E1A5;
-    --amarillo-pastel: #FFF9C4;
+    --petronas-green: #00A19C;
+    --petronas-light: #40E0D0;
+    --mercedes-silver: #C0C0C0;
+    --mercedes-black: #2C2C2C;
     --blanco: #FFFFFF;
-    --gris-claro: #F5F5F5;
+    --gris-claro: #F0F0F0;
     --texto-oscuro: #333333;
 }
 
@@ -36,25 +36,41 @@ body {
 
 /* Header y Navegación */
 .main-header {
-    background-color: var(--azul-pastel);
+    background-color: var(--petronas-green);
     padding: 1rem 0;
-    /* Usamos Flexbox para alinear el logo y la navegación */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed; /* Hace que la barra sea fija */
+    top: 0; /* Fija la barra en la parte superior de la página */
+    left: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+    transition: background-color 0.3s ease; /* Suaviza la transición del color de fondo */
+}
+
+/* Clase que se aplicará cuando el usuario haga scroll */
+.main-header.scroll-active {
+    background-color: rgba(0, 161, 156, 0.8); /* Hace el fondo verde acuamarino semi-transparente */
+    backdrop-filter: blur(5px); /* Aplica un ligero desenfoque */
 }
 
 .logo img {
-    max-height: 5rem;
+    max-height: 7rem;
 }
 
 .main-nav {
-    /* Flexbox para la navegación */
+    /* Flexbox para la navegación:
+     * - display: flex; permite que los elementos de la navegación se alineen horizontalmente
+     */
     display: flex;
 }
 
 .nav-list {
-    /* Eliminamos los puntos de la lista y aplicamos Flexbox */
+    /* Eliminamos los puntos de la lista y aplicamos Flexbox:
+     * - display: flex; alinea los elementos de la lista horizontalmente
+     * - gap: 2rem; crea un espacio uniforme entre los elementos de la lista
+     */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -63,21 +79,26 @@ body {
 }
 
 .nav-list a {
-    color: var(--texto-oscuro);
+    color: var(--blanco);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-    color: var(--rosa-pastel);
+    color: var(--mercedes-silver);
 }
 
 /* Hero Section */
 .hero-section {
-    background-color: var(--rosa-pastel);
+    background-color: var(--mercedes-black);
     padding: 5rem 0;
-    /* Centramos el contenido vertical y horizontalmente con Flexbox */
+    /* Centramos el contenido vertical y horizontalmente con Flexbox:
+     * - display: flex; convierte la sección en un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - justify-content: center; centra verticalmente el contenido
+     * - align-items: center; centra horizontalmente el contenido
+     */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,12 +110,13 @@ body {
 .hero-section h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    color: var(--blanco);
 }
 
 .cta-button {
     display: inline-block;
-    background-color: var(--verde-pastel);
-    color: var(--texto-oscuro);
+    background-color: var(--petronas-green);
+    color: var(--blanco);
     padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 5px;
@@ -102,7 +124,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: var(--amarillo-pastel);
+    background-color: var(--petronas-light);
 }
 
 /* Sección de Productos */
@@ -112,7 +134,12 @@ body {
 }
 
 .productos-container {
-    /* Usamos Flexbox para crear una cuadrícula flexible de productos */
+    /* Usamos Flexbox para crear una cuadrícula flexible de productos:
+     * - display: flex; crea un contenedor flex
+     * - flex-wrap: wrap; permite que los elementos se envuelvan a la siguiente línea si no caben
+     * - gap: 2rem; crea un espacio uniforme entre los productos
+     * - justify-content: center; centra los productos horizontalmente
+     */
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -124,25 +151,28 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Flexbox para organizar el contenido de la tarjeta verticalmente */
+    /* Flexbox para organizar el contenido de la tarjeta verticalmente:
+     * - display: flex; convierte la tarjeta en un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - flex-basis: calc(25% - 2rem); establece el ancho base de cada tarjeta
+     * - flex-grow: 1; permite que las tarjetas crezcan para llenar el espacio disponible
+     */
     display: flex;
     flex-direction: column;
-    /* flex-basis determina el ancho base de cada tarjeta */
     flex-basis: calc(25% - 2rem);
-    /* flex-grow permite que las tarjetas crezcan si hay espacio disponible */
     flex-grow: 1;
-    /* Asegura que todas las tarjetas tengan la misma altura mínima */
     min-height: 350px;
 }
 
 .producto-card img {
     width: 100%;
-    height: 200px;
+    height: 350px;
     object-fit: cover;
 }
 
 .producto-card h3 {
     margin: 1rem;
+    color: var(--mercedes-black);
 }
 
 .producto-card p {
@@ -155,7 +185,8 @@ body {
 .producto-card button {
     margin: 1rem;
     padding: 0.5rem 1rem;
-    background-color: var(--azul-pastel);
+    background-color: var(--petronas-green);
+    color: var(--blanco);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -163,7 +194,7 @@ body {
 }
 
 .producto-card button:hover {
-    background-color: var(--verde-pastel);
+    background-color: var(--petronas-light);
 }
 
 /* Galería de Imágenes */
@@ -172,7 +203,12 @@ body {
 }
 
 .galeria-container {
-    /* Usamos Flexbox para crear una galería de imágenes flexible */
+    /* Usamos Flexbox para crear una galería de imágenes flexible:
+     * - display: flex; crea un contenedor flex
+     * - flex-wrap: wrap; permite que las imágenes se envuelvan a la siguiente línea
+     * - gap: 1rem; crea un espacio uniforme entre las imágenes
+     * - justify-content: center; centra las imágenes horizontalmente
+     */
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -198,11 +234,15 @@ body {
 /* Sección de Comentarios */
 .comentarios-section {
     padding: 5rem 0;
-    background-color: var(--amarillo-pastel);
+    background-color: var(--mercedes-silver);
 }
 
 .comentarios-container {
-    /* Flexbox para organizar los comentarios en una columna */
+    /* Flexbox para organizar los comentarios en una columna:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila los comentarios verticalmente
+     * - gap: 2rem; crea un espacio uniforme entre los comentarios
+     */
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -213,7 +253,10 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Flexbox para alinear la imagen del usuario y el contenido del comentario */
+    /* Flexbox para alinear la imagen del usuario y el contenido del comentario:
+     * - display: flex; crea un contenedor flex
+     * - align-items: center; centra verticalmente los elementos
+     */
     display: flex;
     align-items: center;
 }
@@ -226,7 +269,10 @@ body {
 }
 
 .comentario-contenido {
-    /* Flexbox para organizar el nombre y el texto del comentario */
+    /* Flexbox para organizar el nombre y el texto del comentario:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila el nombre y el texto verticalmente
+     */
     display: flex;
     flex-direction: column;
 }
@@ -234,15 +280,22 @@ body {
 /* Newsletter Section */
 .newsletter-section {
     padding: 5rem 0;
-    background-color: var(--verde-pastel);
-    /* Centramos el contenido con Flexbox */
+    background-color: var(--petronas-green);
+    /* Centramos el contenido con Flexbox:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - align-items: center; centra horizontalmente el contenido
+     */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .newsletter-form {
-    /* Flexbox para organizar el input y el botón horizontalmente */
+    /* Flexbox para organizar el input y el botón horizontalmente:
+     * - display: flex; crea un contenedor flex
+     * - gap: 1rem; crea un espacio entre el input y el botón
+     */
     display: flex;
     gap: 1rem;
     max-width: 500px;
@@ -258,7 +311,8 @@ body {
 
 .newsletter-form button {
     padding: 1rem 2rem;
-    background-color: var(--rosa-pastel);
+    background-color: var(--mercedes-black);
+    color: var(--blanco);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -266,7 +320,7 @@ body {
 }
 
 .newsletter-form button:hover {
-    background-color: var(--azul-pastel);
+    background-color: var(--mercedes-silver);
 }
 
 /* Características Section */
@@ -275,7 +329,12 @@ body {
 }
 
 .caracteristicas-container {
-    /* Flexbox para organizar las características en una fila */
+    /* Flexbox para organizar las características en una fila:
+     * - display: flex; crea un contenedor flex
+     * - justify-content: space-around; distribuye el espacio alrededor de los elementos
+     * - flex-wrap: wrap; permite que los elementos se envuelvan a la siguiente línea
+     * - gap: 2rem; crea un espacio uniforme entre las características
+     */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -283,63 +342,39 @@ body {
 }
 
 .caracteristica {
-    /* Flexbox para organizar el contenido de cada característica verticalmente */
+    /* Flexbox para organizar el contenido de cada característica verticalmente:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - align-items: center; centra horizontalmente el contenido
+     * - flex-basis: calc(33.333% - 2rem); establece el ancho base de cada característica
+     */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* flex-basis define el ancho base de cada característica */
     flex-basis: calc(33.333% - 2rem);
 }
 
 .caracteristica i {
     font-size: 3rem;
     margin-bottom: 1rem;
-}
-
-/* Sidebar */
-.sidebar {
-    background-color: var(--gris-claro);
-    padding: 2rem;
-    /* Flexbox para organizar los widgets verticalmente */
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.widget h3 {
-    margin-top: 0;
-}
-
-.widget ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.widget ul li {
-    margin-bottom: 0.5rem;
-}
-
-.widget a {
-    color: var(--texto-oscuro);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.widget a:hover {
-    color: var(--azul-pastel);
+    color: var(--petronas-green);
 }
 
 /* Footer */
 .main-footer {
-    background-color: var(--azul-pastel);
-    color: var(--texto-oscuro);
+    background-color: var(--mercedes-black);
+    color: var(--blanco);
     padding: 4rem 0 2rem;
 }
 
 .footer-content {
-    /* Flexbox para organizar las secciones del footer */
+    /* Flexbox para organizar las secciones del footer:
+     * - display: flex; crea un contenedor flex
+     * - flex-wrap: wrap; permite que las secciones se envuelvan a la siguiente línea
+     * - justify-content: space-between; distribuye el espacio entre las secciones
+     * - gap: 2rem; crea un espacio uniforme entre las secciones
+     */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -353,6 +388,7 @@ body {
 
 .footer-section h3 {
     margin-top: 0;
+    color: var(--petronas-green);
 }
 
 .footer-section ul {
@@ -366,23 +402,22 @@ body {
 }
 
 .footer-section a {
-    color: var(--texto-oscuro);
+    color: var(--blanco);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: var(--rosa-pastel);
+    color: var(--petronas-light);
 }
 
 .footer-bottom {
     margin-top: 2rem;
     text-align: center;
-    border-top: 1px solid var(--blanco);
+    border-top: 1px solid var(--mercedes-silver);
     padding-top: 2rem;
 }
 
-/* Media Queries para Responsividad */
 @media (max-width: 768px) {
     .main-header {
         /* Cambiamos a columna en dispositivos móviles */
