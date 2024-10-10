@@ -3,6 +3,7 @@
     --blanco: #FFF;
     --naranja: #ff4f1e;
 }
+
 html {
     font-size: 62.5%; /** 1REM = 10pX **/
     box-sizing: border-box;
@@ -11,7 +12,6 @@ html {
     box-sizing: inherit;
 }
   
-
 body {
     background-color: var(--azul);
     font-family:  'Lato', sans-serif;
@@ -29,7 +29,6 @@ h1, h2 {
     text-align: center;
     color: var(--blanco);
     padding: 5rem;
-
 }
 .caja-curso h1 {
     margin: 0;
@@ -45,7 +44,6 @@ h1, h2 {
     color: var(--blanco);
     padding: 0;
 }
-
 
 .contenedor {
     max-width: 120rem;
@@ -67,80 +65,84 @@ h1, h2 {
     padding: 5rem;
 }
 
-/** 1 **/
+/** 1. Display Flex **/
+/* 
+ * La propiedad 'display: flex' convierte un elemento en un contenedor flex.
+ * Esto permite usar las propiedades de Flexbox en sus elementos hijos directos.
+ * Los elementos hijos se convierten en flex items y se alinean en una fila por defecto.
+ */
 .d-flex {
     display: flex;
 }
 
-/** 2 **/
+/** 2. Flex Direction **/
+/* 
+ * 'flex-direction' controla la dirección principal del flujo de los flex items.
+ * 'row-reverse' invierte el orden de los elementos, colocándolos de derecha a izquierda.
+ * Otros valores posibles son: 'row' (por defecto), 'column', y 'column-reverse'.
+ */
 .d-flex-2 {
     display: flex;
     flex-direction: row-reverse;
 }
 
-/** 3 **/
-/** Por defecto el flex-direction es row o en filas**/
+/** 3. Justify Content (Dirección Row) **/
+/* 
+ * 'justify-content' alinea los flex items a lo largo del eje principal (horizontal en row).
+ * 'space-between' distribuye los items uniformemente: el primer item al inicio, el último al final.
+ * Otros valores: 'flex-start', 'flex-end', 'center', 'space-around', 'space-evenly'.
+ */
 .d-flex-3 {
     display: flex;
-
-    /* Justify Content cuando es 
-       flex-direction: row; acomoda 
-       los hijos en forma de filas,
-       es decir, de izquierda a
-       derecha y viceversa
-       Mueve las filas de derecha a izquierda */
     justify-content: space-between;
 }
 
-/** 4 **/
+/** 4. Justify Content (Dirección Column) **/
+/* 
+ * Cuando 'flex-direction' es 'column', el eje principal cambia a vertical.
+ * 'justify-content' ahora alinea los items verticalmente.
+ * 'space-between' distribuye los items verticalmente con espacio entre ellos.
+ */
 .d-flex-4 {
     display: flex;
     flex-direction: column;
     height: 1000px;
-
-    /* Justify Content cuando es 
-       flex-direction: column; acomoda 
-       los hijos en forma de columnas,
-       es decir, de abajo hacia
-       arriba y viceversa 
-       Mueve las columnas de abajo hacia arriba */
     justify-content: space-between;
 }
 
-/** 5 **/
+/** 5. Align Items (Dirección Row) **/
+/* 
+ * 'align-items' alinea los flex items a lo largo del eje cruzado (vertical en row).
+ * 'center' centra los items verticalmente en el contenedor.
+ * Otros valores: 'flex-start', 'flex-end', 'stretch' (por defecto), 'baseline'.
+ */
 .d-flex-5 {
     display: flex;
     height: 700px;
-
-    /* Aling-Items cuando es 
-       flex-direction: row; acomoda 
-       los hijos en forma de filas, pero
-       estas se pueden mover de abajo hacia
-       arriba y viceversa 
-       Mueve las filas de abajo hacia arriba */
     align-items: center;
 }
 
-/** 6 **/
+/** 6. Align Items (Dirección Columna) **/
+/* 
+ * Con 'flex-direction: column', 'align-items' alinea horizontalmente.
+ * 'center' centra los items horizontalmente en el contenedor.
+ */
 .d-flex-6 {
     display: flex;
     flex-direction: column;
     height: 800px;
-
-    /* Aling-Items cuando es 
-       flex-direction: column; acomoda 
-       los hijos en forma de columnas,
-       pero estas se pueden mover de 
-       izquierda a derecha y viceversa
-       Mueve las columnas de derecha a izquierda */
     align-items: center;
 } 
 
-/** 7 **/
+/** 7 y 7.5. Combinación de Justify Content y Align Items **/
+/* 
+ * Se pueden combinar 'justify-content' y 'align-items' para un control preciso.
+ * En row: 'justify-content' controla horizontal, 'align-items' vertical.
+ * En column: 'justify-content' controla vertical, 'align-items' horizontal.
+ */
 .d-flex-7 {
     display: flex;
     height: 800px;
-
     flex-direction: row;
     justify-content: end;
     align-items: center;
@@ -148,22 +150,30 @@ h1, h2 {
 .d-flex-75 {
     display: flex;
     height: 800px;
-
     flex-direction: column;
     justify-content: start;
     align-items: end;
 }
 
-/** 8 **/
+/** 8. Flex Basis **/
+/* 
+ * 'flex-basis' define el tamaño inicial de un flex item antes de que se aplique el crecimiento o encogimiento.
+ * Aquí, cada .box tendrá un ancho inicial de 200px.
+ * 'flex-basis' puede usar cualquier unidad de longitud (px, %, em, etc.).
+ */
 .d-flex-8 {
     display: flex;
-   
 }
 .d-flex-8 .box {
     flex-basis: 200px;
 }
 
-/** 9 **/
+/** 9. Gap y Calc **/
+/* 
+ * 'calc()' permite realizar cálculos para determinar valores de propiedades CSS.
+ * Aquí se usa para calcular el ancho de los elementos, dejando espacio entre ellos.
+ * El primer .box ocupa el 50% menos 1rem, los otros dos 25% menos 1rem cada uno.
+ */
 .d-flex-9 {
     display: flex; 
     justify-content: space-between; 
@@ -176,7 +186,12 @@ h1, h2 {
     flex-basis: calc(25% - 1rem);
 }
 
-/** 10 **/
+/** 10. Flex Wrap **/
+/* 
+ * 'flex-wrap: wrap' permite que los flex items se envuelvan a la siguiente línea si no caben en una.
+ * Cada .box ocupará un tercio del ancho del contenedor (33.3%).
+ * Si no hay suficiente espacio, los items pasarán a la siguiente línea.
+ */
 .d-flex-10 {
     display: flex; 
     flex-wrap: wrap;
@@ -185,11 +200,15 @@ h1, h2 {
     flex-basis: 33.3%;
 }
 
-/** 11 **/
+/** 11. Flex Grow **/
+/* 
+ * 'flex-grow' determina cómo crecen los flex items para ocupar el espacio disponible.
+ * Es un número que representa la proporción de espacio extra que tomará el item.
+ * El primer .box crecerá el doble que el segundo, y cuatro veces más que el tercero.
+ */
 .d-flex-11 {
     display: flex; 
 }
-/** Flex-grow es el factor de crecimiento **/
 .d-flex-11 .box:nth-child(1) {
     flex-grow: 2;
 }
@@ -200,7 +219,12 @@ h1, h2 {
     flex-grow: .5;
 }
 
-/** 12 **/
+/** 12. Flex Shrink **/
+/* 
+ * 'flex-shrink' determina cómo se encogen los flex items cuando no hay suficiente espacio.
+ * Un valor mayor significa que el item se encogerá más rápido que los otros.
+ * Aquí, el tercer .box se encogerá el doble de rápido que los otros dos.
+ */
 .d-flex-12 {
     display: flex; 
 }
@@ -208,14 +232,16 @@ h1, h2 {
     flex-grow: 1;
     flex-basis: 300px;
 }
-/* Flex-shrink es el factor de decrecimiento 
-    y se aplica cuando el contenedor es mas pequeño
-    que el contenido empiza a hacerse mas pequeño */
 .d-flex-12 .box:nth-child(3) {
     flex-shrink: 2;
 }
 
-/** 13 **/
+/** 13. Flex Shorthand **/
+/* 
+ * 'flex' es una propiedad abreviada que combina 'flex-grow', 'flex-shrink' y 'flex-basis'.
+ * La sintaxis es: flex: [flex-grow] [flex-shrink] [flex-basis]
+ * Aquí, cada .box crecerá y se encogerá igualmente, con un tamaño base de 33.3%.
+ */
 .d-flex-13 {
     display: flex; 
 }
@@ -224,7 +250,6 @@ h1, h2 {
     flex-shrink: 1;
     flex-basis: 33.3%;
     
-    /* Flex es una propiedad abreviada que combina 
-       flex-grow, flex-shrink y flex-basis */
-    flex: 1 0 33.3%
+    /* Equivalente a las tres líneas anteriores */
+    flex: 1 1 33.3%
 }
