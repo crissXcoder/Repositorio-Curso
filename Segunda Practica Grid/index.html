@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Avanzada de CSS Grid</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo de la empresa">
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="hero-section">
+            <h1>Bienvenido a Nuestro Sitio</h1>
+            <p>Descubre nuestros increíbles servicios y productos</p>
+            <a href="#servicios" class="cta-button">Explorar Servicios</a>
+        </section>
+
+        <section id="servicios" class="servicios-section">
+            <h2>Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <i class="icono-servicio1"></i>
+                    <h3>Servicio 1</h3>
+                    <p>Descripción del servicio 1</p>
+                </div>
+                <div class="servicio-card">
+                    <i class="icono-servicio2"></i>
+                    <h3>Servicio 2</h3>
+                    <p>Descripción del servicio 2</p>
+                </div>
+                <div class="servicio-card">
+                    <i class="icono-servicio3"></i>
+                    <h3>Servicio 3</h3>
+                    <p>Descripción del servicio 3</p>
+                </div>
+                <div class="servicio-card">
+                    <i class="icono-servicio4"></i>
+                    <h3>Servicio 4</h3>
+                    <p>Descripción del servicio 4</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portafolio" class="portafolio-section">
+            <h2>Nuestro Portafolio</h2>
+            <div class="portafolio-grid">
+                <div class="proyecto">
+                    <img src="proyecto1.jpg" alt="Proyecto 1">
+                    <div class="proyecto-info">
+                        <h3>Proyecto 1</h3>
+                        <p>Descripción del proyecto 1</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto2.jpg" alt="Proyecto 2">
+                    <div class="proyecto-info">
+                        <h3>Proyecto 2</h3>
+                        <p>Descripción del proyecto 2</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto3.jpg" alt="Proyecto 3">
+                    <div class="proyecto-info">
+                        <h3>Proyecto 3</h3>
+                        <p>Descripción del proyecto 3</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto4.jpg" alt="Proyecto 4">
+                    <div class="proyecto-info">
+                        <h3>Proyecto 4</h3>
+                        <p>Descripción del proyecto 4</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto5.jpg" alt="Proyecto 5">
+                    <div class="proyecto-info">
+                        <h3>Proyecto 5</h3>
+                        <p>Descripción del proyecto 5</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <img src="proyecto6.jpg" alt="Proyecto 6">
+                    <div class="proyecto-info">
+                        <h3>Proyecto 6</h3>
+                        <p>Descripción del proyecto 6</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="testimonios-section">
+            <h2>Testimonios de Clientes</h2>
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <img src="cliente1.jpg" alt="Cliente 1">
+                    <blockquote>"Excelente servicio, superó todas mis expectativas."</blockquote>
+                    - Juan Pérez
+                </div>
+                <div class="testimonio">
+                    <img src="cliente2.jpg" alt="Cliente 2">
+                    <blockquote>"Profesionales altamente calificados. Recomiendo totalmente."</blockquote>
+                    - María García
+                </div>
+                <div class="testimonio">
+                    <img src="cliente3.jpg" alt="Cliente 3">
+                    <blockquote>"La mejor decisión que tomé para mi negocio."</blockquote>
+                    - Carlos Rodríguez
+                </div>
+            </div>
+        </section>
+
+        <section id="precios" class="precios-section">
+            <h2>Nuestros Planes</h2>
+            <div class="precios-grid">
+                <div class="plan">
+                    <h3>Básico</h3>
+                    <p class="precio">$19.99/mes</p>
+                    <ul>
+                        <li>Característica 1</li>
+                        <li>Característica 2</li>
+                        <li>Característica 3</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </div>
+                <div class="plan destacado">
+                    <h3>Profesional</h3>
+                    <p class="precio">$39.99/mes</p>
+                    <ul>
+                        <li>Característica 1</li>
+                        <li>Característica 2</li>
+                        <li>Característica 3</li>
+                        <li>Característica 4</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </div>
+                <div class="plan">
+                    <h3>Premium</h3>
+                    <p class="precio">$59.99/mes</p>
+                    <ul>
+                        <li>Característica 1</li>
+                        <li>Característica 2</li>
+                        <li>Característica 3</li>
+                        <li>Característica 4</li>
+                        <li>Característica 5</li>
+                    </ul>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <h2>Últimas Publicaciones</h2>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <img src="blog1.jpg" alt="Blog 1">
+                    <h3>Título del Post 1</h3>
+                    <p>Extracto del post 1...</p>
+                    <a href="#" class="leer-mas">Leer más</a>
+                </article>
+                <article class="blog-post">
+                    <img src="blog2.jpg" alt="Blog 2">
+                    <h3>Título del Post 2</h3>
+                    <p>Extracto del post 2...</p>
+                    <a href="#" class="leer-mas">Leer más</a>
+                </article>
+                <article class="blog-post">
+                    <img src="blog3.jpg" alt="Blog 3">
+                    <h3>Título del Post 3</h3>
+                    <p>Extracto del post 3...</p>
+                    <a href="#" class="leer-mas">Leer más</a>
+                </article>
+                <article class="blog-post">
+                    <img src="blog4.jpg" alt="Blog 4">
+                    <h3>Título del Post 4</h3>
+                    <p>Extracto del post 4...</p>
+                    <a href="#" class="leer-mas">Leer más</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="equipo" class="equipo-section">
+            <h2>Nuestro Equipo</h2>
+            <div class="equipo-grid">
+                <div class="miembro">
+                    <img src="miembro1.jpg" alt="Miembro 1">
+                    <h3>Nombre Apellido</h3>
+                    <p>Cargo</p>
+                </div>
+                <div class="miembro">
+                    <img src="miembro2.jpg" alt="Miembro 2">
+                    <h3>Nombre Apellido</h3>
+                    <p>Cargo</p>
+                </div>
+                <div class="miembro">
+                    <img src="miembro3.jpg" alt="Miembro 3">
+                    <h3>Nombre Apellido</h3>
+                    <p>Cargo</p>
+                </div>
+                <div class="miembro">
+                    <img src="miembro4.jpg" alt="Miembro 4">
+                    <h3>Nombre Apellido</h3>
+                    <p>Cargo</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="estadisticas" class="estadisticas-section">
+            <h2>Nuestros Números</h2>
+            <div class="estadisticas-grid">
+                <div class="estadistica">
+                    <h3>1000+</h3>
+                    <p>Clientes Satisfechos</p>
+                </div>
+                <div class="estadistica">
+                    <h3>500+</h3>
+                    <p>Proyectos Completados</p>
+                </div>
+                <div class="estadistica">
+                    <h3>50+</h3>
+                    <p>Premios Ganados</p>
+                </div>
+                <div class="estadistica">
+                    <h3>24/7</h3>
+                    <p>Soporte al Cliente</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-section">
+            <h2>Contáctanos</h2>
+            <div class="contacto-grid">
+                <form class="formulario-contacto">
+                    <input type="text" placeholder="Nombre">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Mensaje"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <div class="info-contacto">
+                    <h3>Información de Contacto</h3>
+                    <p>Email: info@empresa.com</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Dirección: Calle Principal 123, Ciudad</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="sidebar">
+        <div class="widget">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#">Categoría 1</a></li>
+                <li><a href="#">Categoría 2</a></li>
+                <li><a href="#">Categoría 3</a></li>
+                <li><a href="#">Categoría 4</a></li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h3>Posts Populares</h3>
+            <ul>
+                <li><a href="#">Post Popular 1</a></li>
+                <li><a href="#">Post Popular 2</a></li>
+                <li><a href="#">Post Popular 3</a></li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="#" class="social-icon">FB</a>
+                <a href="#" class="social-icon">TW</a>
+                <a href="#" class="social-icon">IG</a>
+                <a href="#" class="social-icon">LI</a>
+            </div>
+        </div>
+    </aside>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos una empresa dedicada a ofrecer soluciones innovadoras para nuestros clientes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="footer-newsletter">
+                    <input type="email" placeholder="Tu email">
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@empresa.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Dirección: Calle Principal 123, Ciudad</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nombre de la Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
